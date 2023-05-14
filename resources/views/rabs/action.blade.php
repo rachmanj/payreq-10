@@ -10,7 +10,7 @@
   <form action="{{ route('rabs.destroy', $model->id) }}" method="POST">
   @csrf @method('DELETE')
     @can('delete_rab')
-    <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure to delete this record?')" {{ $model->payreqs->count() > 0 ? 'disabled' : '' }}>delete</button>
+    <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure to delete this record?')" {{ $model->payreqs->count() > 0 || $model->status !== 'progress' ? 'disabled' : '' }}>delete</button>
     @endcan
   </form>
 
