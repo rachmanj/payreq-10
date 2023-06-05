@@ -122,7 +122,7 @@ class ApprovedController extends Controller
         $payreqs = Payreq::select('id', 'payreq_num', 'user_id', 'approve_date', 'payreq_type', 'payreq_idr', 'outgoing_date', 'rab_id')
             ->selectRaw('datediff(now(), approve_date) as days')
             ->whereNull('outgoing_date')
-            ->orderBy('approve_date', 'desc')
+            ->orderBy('payreq_num', 'desc')
             ->get();
 
         return datatables()->of($payreqs)
