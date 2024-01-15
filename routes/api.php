@@ -24,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/rabs', [RabApiController::class, 'index']);
 Route::post('/invoices', [InvoiceApiController::class, 'store']);
 Route::post('/sync-bucs', [BucApiController::class, 'receive_buc_payreqs']);
+Route::post('/test', [BucApiController::class, 'test']);

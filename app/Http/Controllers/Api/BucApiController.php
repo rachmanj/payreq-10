@@ -14,7 +14,7 @@ class BucApiController extends Controller
         $array_not_exist = [];
         $array_exist = [];
         // check if realization_details from payreq-x exist in table realization_detail_receives
-        foreach ($request->json['realization_details'] as $realization_detail) {
+        foreach ($request['ninja']['realization_details'] as $realization_detail) {
             $is_exist = RealizationDetailReceive::where('realization_detail_id', $realization_detail['id'])->first();
 
             // if not exist, create new record in realization_detail_receives
@@ -54,6 +54,17 @@ class BucApiController extends Controller
         return response()->json([
             "added" => $array_not_exist,
             "skipped" => $array_exist,
+            "message" => 'success'
+        ]);
+    }
+
+    public function test(Request $request)
+    {
+        return $request['pesan'];
+        die;
+
+        return response()->json([
+            "ninja" => $request['pesan'],
             "message" => 'success'
         ]);
     }

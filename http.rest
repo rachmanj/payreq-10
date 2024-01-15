@@ -55,3 +55,11 @@ Content-Type: application/json
     ]
 }
 
+###
+POST http://localhost/pay-support/api/test
+Content-Type: application/json
+
+{
+    "pesan": "mantap bro"
+}
+
