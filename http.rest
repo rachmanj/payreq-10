@@ -1,4 +1,4 @@
-POST http://localhost/pay-support/api/sync-buc
+POST http://localhost/pay-support/api/sync-bucs
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost/pay-support/api/sync-buc
+POST http://localhost/pay-support/api/sync-bucs
 Content-Type: application/json
 
 {
