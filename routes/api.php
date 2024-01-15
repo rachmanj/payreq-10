@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BucApiController;
 use App\Http\Controllers\Api\InvoiceApiController;
 use App\Http\Controllers\Api\RabApiController;
 use Illuminate\Http\Request;
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/rabs', [RabApiController::class, 'index']);
 Route::post('/invoices', [InvoiceApiController::class, 'store']);
+Route::post('/sync-bucs', [BucApiController::class, 'receive_buc_payreqs']);

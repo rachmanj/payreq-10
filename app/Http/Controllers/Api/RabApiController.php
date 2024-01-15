@@ -13,7 +13,11 @@ class RabApiController extends Controller
         $rabs = Rab::orderBy('rab_no', 'asc')->get();
 
         return response()->json(
-            $rabs
+            [
+                "rab_count" => $rabs->count(),
+                "data" => $rabs,
+                "message" => "success",
+            ]
         );
     }
 }

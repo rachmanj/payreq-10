@@ -20,10 +20,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RekapController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerifyController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Event\Code\Test;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -54,7 +56,7 @@ Route::middleware('auth')->group(function () {
         Route::get('data', [RoleController::class, 'data'])->name('data');
     });
     Route::resource('roles', RoleController::class);
-    
+
     // PERMISSIONS
     Route::prefix('permissions')->name('permissions.')->group(function () {
         Route::get('data', [PermissionController::class, 'data'])->name('data');
@@ -187,4 +189,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/multi-paid', [InvoiceController::class, 'multi_paid'])->name('multi_paid');
     });
     Route::resource('invoices', InvoiceController::class);
+
+    // TEST
+    Route::get('test', [TestController::class, 'index']);
 });

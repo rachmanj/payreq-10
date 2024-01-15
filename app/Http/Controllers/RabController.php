@@ -223,9 +223,10 @@ class RabController extends Controller
             ->toJson();
     }
 
-    public function test($id)
+    public function test()
     {
-        $result = app(ToolController::class)->progress($id);
+        $result = Rab::orderBy('date', 'desc')->orderBy('rab_no', 'desc')->get();
+
         return $result;
         die;
     }

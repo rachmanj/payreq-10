@@ -1,0 +1,57 @@
+POST http://localhost/pay-support/api/sync-buc
+Content-Type: application/json
+
+{
+    "realization_details": [
+        {
+            "id": 119,
+            "rab_id": 128,
+            "amount": "775000.00",
+            "description": "Pembelian Material Toko Sendang Obalan (4)",
+            "created_at": "2023-12-06T02:28:39.000000Z",
+            "nomor": "2300000087"
+        }
+    ]
+}
+
+###
+POST http://localhost/pay-support/api/sync-buc
+Content-Type: application/json
+
+{
+    "realization_details": [
+        {
+            "id": 119,
+            "rab_id": 128,
+            "amount": "775000.00",
+            "description": "Pembelian Material Toko Sendang Obalan (4)",
+            "created_at": "2023-12-06T02:28:39.000000Z",
+            "nomor": "2300000087"
+        },
+        {
+            "id": 120,
+            "rab_id": 121,
+            "amount": "1745000.00",
+            "description": "Pembelian Material Toko Sendang Obalan",
+            "created_at": "2023-12-06T02:29:10.000000Z",
+            "nomor": "2300000088"
+        },
+        {
+            "id": 121,
+            "rab_id": 142,
+            "amount": "1750000.00",
+            "description": "Pembelian Material Toko Sendang Obalan",
+            "created_at": "2023-12-06T02:29:35.000000Z",
+            "nomor": "2300000090"
+        },
+        {
+            "id": 122,
+            "rab_id": 140,
+            "amount": "1285000.00",
+            "description": "Pembelian Material Toko Sendang Obalan",
+            "created_at": "2023-12-06T02:30:06.000000Z",
+            "nomor": "2300000091"
+        }
+    ]
+}
+
