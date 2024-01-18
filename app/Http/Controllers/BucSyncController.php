@@ -11,7 +11,12 @@ class BucSyncController extends Controller
     public function index()
     {
         $last_sync = RealizationDetailReceive::select('created_at')->orderBy('created_at', 'desc')->first();
-        $formated_last_sync = date('d-M-Y H:i:s', strtotime($last_sync->created_at . ' +8 hours'));
+
+        if ($last_sync) {
+            $formated_last_sync = date('d-M-Y H:i:s', strtotime($last_sync->created_at . ' +8 hours'));
+        } else {
+            $formated_last_sync = 'No data';
+        }
 
         return view('buc-sync.index', compact('formated_last_sync'));
     }
