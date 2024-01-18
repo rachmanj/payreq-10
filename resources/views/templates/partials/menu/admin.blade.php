@@ -3,6 +3,9 @@
     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
       <li><a href="{{ route('account.index') }}" class="dropdown-item">Accounts</a></li>
       <li><a href="{{ route('adv-category.index') }}" class="dropdown-item">Advance Category</a></li>
+      @can('akses_sync_payreqs')
+      <li><a href="{{ route('bucs-sync.index') }}" class="dropdown-item">Sync DNC Payreqs</a></li>
+      @endcan
       @can('akses_user')
       <li><a href="{{ route('users.index') }}" class="dropdown-item">User List</a></li>
       @endcan

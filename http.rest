@@ -56,10 +56,5 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost/pay-support/api/test
-Content-Type: application/json
-
-{
-    "pesan": "mantap bro"
-}
+GET http://localhost/payreq-x/api/rabs/get-payreqs
 

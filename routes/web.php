@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdvanceCategoryController;
 use App\Http\Controllers\ApprovedController;
+use App\Http\Controllers\BucSyncController;
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\DashboardAccountingController;
 use App\Http\Controllers\DashboardDncController;
@@ -192,4 +193,10 @@ Route::middleware('auth')->group(function () {
 
     // TEST
     Route::get('test', [TestController::class, 'index']);
+
+    // SYNC DNC PAYREQS
+    Route::prefix('bucs-sync')->name('bucs-sync.')->group(function () {
+        Route::get('/', [BucSyncController::class, 'index'])->name('index');
+        Route::get('/sync-payreqs', [BucSyncController::class, 'sync_buc_payreqs'])->name('sync_payreqs');
+    });
 });
